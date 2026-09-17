@@ -18,3 +18,10 @@ npm run deploy          # build + wrangler deploy
 ```
 
 Mail for classicuo.eu stays on Aruba (MX / SPF records untouched).
+
+## CI deploy (manual)
+
+GitHub → Actions → "Deploy to Cloudflare" → Run workflow. Needs two repo secrets:
+
+- `CLOUDFLARE_API_TOKEN` — token with the "Edit Cloudflare Workers" template.
+- `CLOUDFLARE_ACCOUNT_ID` — from the Workers & Pages overview page.
