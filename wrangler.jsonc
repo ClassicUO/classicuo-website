@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "classicuo-website",
+  "compatibility_date": "2026-09-01",
+  // Assets-only Worker: no JS entrypoint, just serves dist/.
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "classicuo.eu", "custom_domain": true },
+    { "pattern": "www.classicuo.eu", "custom_domain": true }
+  ]
+}

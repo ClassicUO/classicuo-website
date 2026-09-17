@@ -8,11 +8,13 @@ npm run dev      # local dev server
 npm run build    # output in dist/
 ```
 
-## Cloudflare Pages
+## Deploy (Cloudflare Workers, static assets)
 
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: this folder
+Config in `wrangler.jsonc`. Custom domains: `classicuo.eu` and `www.classicuo.eu` (www redirects to apex via `public/_redirects`).
 
-`/support` is served from `support.html` via Cloudflare Pages clean URLs.
-`public/_redirects` keeps old `index.php` / `support.php` links working.
+```sh
+npx wrangler login      # once
+npm run deploy          # build + wrangler deploy
+```
+
+Mail for classicuo.eu stays on Aruba (MX / SPF records untouched).
