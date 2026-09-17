@@ -10,7 +10,7 @@ npm run build    # output in dist/
 
 ## Deploy (Cloudflare Workers, static assets)
 
-Config in `wrangler.jsonc`. Custom domains: `classicuo.eu` and `www.classicuo.eu` (www redirects to apex via `public/_redirects`).
+Config in `wrangler.jsonc`. Custom domains: `classicuo.eu` and `www.classicuo.eu`. www -> apex redirect is a Cloudflare Redirect Rule in the dashboard (Workers assets `_redirects` only allows relative paths).
 
 ```sh
 npx wrangler login      # once
